@@ -1,13 +1,145 @@
+/* html,
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  font-family: sans-serif;
+}
+.wrapper {
+  max-width: 420px;
+  min-height: 96vh;
+  margin: 0 auto;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+button {
+  font-size: 2rem;
+  border: 1px solid rgb(19, 21, 20);
+  cursor: pointer;
+  color:#fff;
+}
+.modifiers button {
+  background-color: rgb(221, 219, 54);
+}
+.operations button {
+  background-color: rgb(56, 54, 220);
+  width: 100px;
+}
+.digits button {
+  background-color: #0e0e6c;
+}
+
+
+.wrapper,
+.subgrid {
+  display: grid;
+}
+.wrapper {
+  width: 55rem;
+  grid-template-areas:
+    "total total total total"
+    "modif modif modif oper"
+    "digit digit digit oper"
+    "digit digit digit oper"
+    "digit digit digit oper"
+    "digit digit digit oper";
+  grid-auto-columns: 5fr;
+}
+.show-input {
+  grid-area: total;
+  border: 1px solid #000;
+}
+.modifiers {
+  grid-area: modif;
+}
+.operations {
+  grid-area: oper;
+}
+.digits {
+  grid-area: digit;
+}
+
+.show-input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.modifiers {
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.digits {
+  display: flex;
+  flex-wrap: wrap;
+}
+.digits button {
+  flex: 1 0 26%;
+} */
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 30rem;
+  background-color: #000;
+  padding: 0.2rem 0.3rem 1rem;
+  
+}
+
+.show-wrapper {
+  padding: 0rem 0.3rem;
+}
+
+.input-center {
+  align-items: left;
+}
+
+.show-wrapper .show-input {
+  background-color: transparent;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.btns button {
+  width: 6rem;
+  font-size: 1.2rem;
+  background-color: #2a2e3a;
+  color: #fff;
+  border: none;
+  margin: 0.2rem;
+}
+
+.btnWrapper {
+  display: flex;
+}
+
+.btnMath{
+  width: 43%;
+}
+
+.btnMath button {
+  width: 100%;
+  height: 5rem;
+  margin: 0.2rem 0;
+  background-color: #61d1db;
+  border: none;
+  color: #fff;
+}
+.btnMath button, .btns button{
+  border-radius: 5px;
 }
